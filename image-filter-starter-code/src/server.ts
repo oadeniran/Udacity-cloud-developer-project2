@@ -43,10 +43,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
       var tmp: string[] = []
       fs.readdir('src/util/tmp/', (err: Error, files) =>{
         files.forEach(file =>{
-          console.log(path.join('src/util/tmp/',file));
           tmp.push(path.join('src/util/tmp/',file));
         });
-        console.log(tmp);
         deleteLocalFiles(tmp);
       });
     }
