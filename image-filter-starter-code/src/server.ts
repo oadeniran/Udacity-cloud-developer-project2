@@ -1,4 +1,5 @@
 import express from 'express';
+import {Request, Response} from 'express';
 import fs from "fs";
 import path from "path";
 import bodyParser from 'body-parser';
@@ -29,8 +30,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
 
   // @TODO1 IMPLEMENT A RESTFUL ENDPOINT
   // GET /filteredimage?image_url={{URL}}
-  app.get('/filteredimage/', async (req, res) => {
-    let {image_url} = req.query;
+  app.get('/filteredimage/', async (req : Request, res : Response) => {
+
+    let {image_url} :{image_url : string} = req.query;
 
     if (! isValidurl(image_url)) {
       return res.status(400).send('Invalid url');
@@ -61,7 +63,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   
   // Root Endpoint
   // Displays a simple message to the user
-  app.get( "/", async ( req, res ) => {
+  app.get( "/", async ( req : Request, res : Response ) => {
     res.send("try GET /filteredimage?image_url={{}}")
   } );
   
