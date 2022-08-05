@@ -5,5 +5,5 @@ Udagram is a simple cloud application developed alongside the Udacity Cloud Engi
 
 ### link for submission: http://udagram-project-2-dev.us-east-1.elasticbeanstalk.com
 
-### usge: http://udagram-project-2-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=<<image link>> to ilter the image
-  eg : 
+### usge: http://udagram-project-2-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=<<image_link>> to filter the image
+  eg : http://udagram-project-2-dev.us-east-1.elasticbeanstalk.com/filteredimage?image_url=https://user-images.githubusercontent.com/60529828/183002235-441389b3-135d-48e2-8b0c-f43cf7b8c390.PNG
