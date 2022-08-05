@@ -37,15 +37,9 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     }
 
     else{
-      let filterpath = await filterImageFromURL(image_url);
-      res.status(200).sendFile(filterpath);
-
-      var tmp: string[] = []
-      fs.readdir('src/util/tmp/', (err: Error, files) =>{
-        files.forEach(file =>{
-          tmp.push(path.join('src/util/tmp/',file));
-        });
-        deleteLocalFiles(tmp);
+      const filterpath = await filterImageFromURL(image_url);
+      res.status(200).sendFile(filterpath, function (){
+        deleteLocalFiles([filterpath]);
       });
     }
   });
